@@ -24,22 +24,58 @@ function playRound() {
     if (((playerSelection === 'rock') && (computerSelection === 'scissors')) 
     || ((playerSelection === 'paper') && (computerSelection === 'rock'))
     || ((playerSelection === 'scissors') && (computerSelection === 'paper')))  {
-        return `You: ${playerSelection}
-Computer: ${computerSelection}
-You win!`;
+        console.log(`You: ${playerSelection}
+Computer: ${computerSelection}`);
+return `You win!`;
     }
     else if (playerSelection === computerSelection) {
-        return `You: ${playerSelection}
-Computer: ${computerSelection}
-Draw!`;
+        console.log(`You: ${playerSelection}
+Computer: ${computerSelection}`);
+return `Draw!`;
     }
     else {
-        return `You: ${playerSelection}
-Computer: ${computerSelection}
-You lose!`;
+        console.log(`You: ${playerSelection}
+Computer: ${computerSelection}`);
+return `You lose!`;
     }
 }
 }
 
-console.log(playRound());
+
+function game() {
+    let userScore = 0;
+    let compScore = 0;
+    alert('Welcome to the Rock Paper Scissors game. There are 5 rounds to play against the computer. Press OK to continue.');
+    for (i = 1; i <= 5; i++) {
+        let roundOutcome = playRound();
+        if (roundOutcome === 'You win!') {
+            userScore++;
+            console.log(`You have won round ${i}.
+Computer score: ${compScore}
+User score:     ${userScore}`);
+        }
+        else if (roundOutcome === 'You lose!') {
+            compScore++;
+            console.log(`You have lost round ${i}.
+Computer score: ${compScore}
+User score:     ${userScore}`);
+        }
+        else {
+            console.log(`Round ${i} is a tie.
+Computer score: ${compScore}
+User score:     ${userScore}`);
+        }
+    }
+    if (userScore > compScore) {
+        return 'congratulations! You have won the game';
+    }
+    else if (userScore < compScore) {
+        return 'Unlucky. You have lost the game';
+    }
+    else {
+        return 'The scores are equal - the game is tied!';
+    }
+}
+
+console.log(game());
 
