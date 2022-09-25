@@ -1,0 +1,31 @@
+create function called getComputerChoice() to generate computer selection of either rock, paper or scissors
+- create a variable that is randomly assigned either 0, 1 or 2
+    1.Math.random to generate a decimal number between 0 and 1
+    2.Multiply this number by 2 and round down to integer using math.floor
+-create if statement that returns either rock, paper, or scissors, with each answer being linked with 0, 1 or 2.
+
+create playRound() function to play a single round of rock paper scissors
+prompt to ask user for their answer and assign this to playerSelection variable
+convert playerSelection to lower case
+create variable with value of getComputerChoice()
+if statement with three outputs for winning combination, tie, or loss (for player pov)
+    - if answers are equal then output 'You tied'
+    - if answers are all of the winning combinations 'you win'
+    - else 'you lost'
+
+create game() function to run the game for 5 rounds
+    create variable for userScore and compScore and assign both to 0
+    alert to tell user that they are playing a 5 round game. press ok to play
+    use for loop to run the playRound() function 5 times
+    if statement to say if you won, drew or lost the round and to add score userScore or CompScore
+
+    if statement to return results of game
+    -if userScore is greater than comp Score then user wins
+    -if compScore is greater than user score then user lost
+    -if scores are equal then there is a draw
+
+
+
+
+
+
