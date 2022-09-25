@@ -15,6 +15,12 @@ function playRound() {
     let playerSelection = prompt("Make your selection by typing 'rock', 'paper', or 'scissors': ", "");
     playerSelection = playerSelection.toLowerCase();
     let computerSelection = getComputerChoice();
+
+    if ((playerSelection !== 'rock') && (playerSelection !== 'paper') && (playerSelection !== 'scissors')) {
+        alert("Your entry is invalid! Pleaser enter 'rock', 'paper' or 'scissors'");
+        return playRound();
+    }
+    else {
     if (((playerSelection === 'rock') && (computerSelection === 'scissors')) 
     || ((playerSelection === 'paper') && (computerSelection === 'rock'))
     || ((playerSelection === 'scissors') && (computerSelection === 'paper')))  {
@@ -32,6 +38,7 @@ Draw!`;
 Computer: ${computerSelection}
 You lose!`;
     }
+}
 }
 
 console.log(playRound());
