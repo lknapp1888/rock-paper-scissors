@@ -1,3 +1,9 @@
+/*function to randomly generate rock, paper or scissors. Math.random generates random decimal number between 0 and 1.
+This is multiplied by 3 and then rounded down to the nearest integer using Math.floor. We multiply by three as we need
+three numbers - in this case, 0, 1 and 2)
+*/
+
+
 function getComputerChoice() {
     let choiceRefNum = Math.floor((Math.random() * 3));
     if (choiceRefNum === 0) {
@@ -11,8 +17,12 @@ function getComputerChoice() {
     }
 }
 
+/* Function to play a round of rock paper scissors. Uses the getComputerChoice() function to generate computer choice. The
+user inputs their choice when prompted with the prompt */
+
 function playRound() {
     let playerSelection = prompt("Make your selection by typing 'rock', 'paper', or 'scissors': ", "");
+    //change to lower case as the conditional checks in the function are case sensitive
     playerSelection = playerSelection.toLowerCase();
     let computerSelection = getComputerChoice();
 
@@ -41,7 +51,8 @@ return `You lose!`;
 }
 }
 
-
+/* Function to play a 5 round game of rock paper scissors. Uses a for loop to play the playROund() function
+5 times. A message with the round name and score is outputted in each round*/
 function game() {
     let userScore = 0;
     let compScore = 0;
